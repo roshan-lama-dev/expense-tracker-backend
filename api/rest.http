@@ -1,2 +1,27 @@
 ### Checking if the server is live
 GET http://localhost:8000/
+
+# ================User API
+### Post new user
+POST http://localhost:8000/api/v1/user
+Content-Type: application/json
+
+{
+    "name": "Rpsjan",
+    "pin": "123",
+    "email":"roshassn@gmail.com"
+}
+
+
+# transcation api
+
+### get user transacrion
+POST  http://localhost:8000/api/v1/transaction
+Content-Type: application/json
+Authorization: "639e3f5a43732d8fd3685ccc"
+
+{
+    "type":"income",
+    "name":"Projet",
+    "amount":333
+}

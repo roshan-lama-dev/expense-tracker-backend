@@ -15,6 +15,18 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(cors());
 
+// ROuter
+import userRouter from "./src/routers/userRouter.js";
+import transactionRouter from "./src/routers/transactionRouter.js";
+import { userAuth } from "./src/middleware/authMiddleWare.js";
+
+app.use("/api/v1/user", userRouter);
+
+app.use("api/v1/transaction", userAuth, transactionRouter);
+
+// userRouter to handle the user registratyion and login
+// transction router to hanlde all the transcation realted crud operatopn
+
 // uncaught roruter request
 app.use("*", (req, res, next) => {
   const error = {
