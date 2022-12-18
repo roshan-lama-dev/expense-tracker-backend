@@ -51,9 +51,9 @@ export const fetchTransaction = async (obj) => {
       };
     }
     const { data } = await axios.post(userURL + "/login", obj);
-    headers: {
-      Authorization: "";
-    }
+    // headers: {
+    //   Authorization: "";
+    // }
     return data;
   } catch (error) {
     return {
