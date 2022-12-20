@@ -13,7 +13,7 @@ export const CustomeTable = ({ trans }) => {
       </thead>
       <tbody>
         {trans.map((item, i) => (
-          <tr key={i}>
+          <tr key={i} className="">
             <td>1</td>
             {item.type === "income" ? (
               <>
