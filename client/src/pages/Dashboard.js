@@ -4,7 +4,7 @@ import { CustomeTable } from "../components/customTable/CustomTable";
 import { MainLayout } from "../components/mainLayout/MainLayout";
 import { fetchTransaction } from "../helper/axiosHelper";
 
-const Dashboard = (trans = []) => {
+const Dashboard = () => {
   const [transaction, setTransaction] = useState([]);
   useEffect(() => {
     fetchingTrans();

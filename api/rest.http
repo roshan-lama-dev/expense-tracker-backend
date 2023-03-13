@@ -1,22 +1,22 @@
 ### Checking if the server is live
-GET http://localhost:8000/
+GET http://localhost:9000/
 
 # ================User API
 ### Post new user
-POST http://localhost:8000/api/v1/user
+POST http://localhost:9000/api/v1/user/login
 Content-Type: application/json
 
 {
-    "name": "Rpsjan",
+    
     "pin": "123",
-    "email":"roshassn@gmail.com"
+    "email":"roshassnzz@gmail.com"
 }
 
 
 # transcation api
 
 ### get user transacrion
-POST  http://localhost:8000/api/v1/transaction
+POST  http://localhost:9000/api/v1/transaction
 Content-Type: application/json
 Authorization: "639e3f5a43732d8fd3685ccc"
 

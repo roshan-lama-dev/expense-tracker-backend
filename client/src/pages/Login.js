@@ -40,7 +40,7 @@ const Login = () => {
       name: "email",
       type: "email",
       required: true,
-      forwaredRef: emailRef,
+      forwaredref: emailRef,
     },
     {
       label: "Pin",
@@ -50,7 +50,7 @@ const Login = () => {
       required: true,
       minLegnth: "4",
       maxLength: "4",
-      forwaredRef: pinRef,
+      forwaredref: pinRef,
     },
   ];
   return (

@@ -3,7 +3,7 @@ import {
   createTrans,
   getTeansByUserId,
 } from "../models/transModel/TransModel.js";
-import { createUser, getSingleUser } from "../models/UserModel.js";
+// import { createUser, getSingleUser } from "../models/UserModel.js";
 const router = express.Router();
 
 // creating new user

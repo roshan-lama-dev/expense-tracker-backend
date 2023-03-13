@@ -2,6 +2,7 @@ import express from "express";
 import { createUser, getSingleUser } from "../models/UserModel.js";
 const router = express.Router();
 
+
 router.all("/", (req, res, next) => {
   console.log("Got hit to  all router");
   next();

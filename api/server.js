@@ -5,7 +5,7 @@ import morgan from "morgan";
 const app = express();
 
 // dynamic port
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 9000;
 
 // connect mongo db
 import { connectMongo } from "./src/config/dbConfig.js";
@@ -24,30 +24,30 @@ app.use("/api/v1/user", userRouter);
 
 app.use("api/v1/transaction", userAuth, transactionRouter);
 
-// userRouter to handle the user registratyion and login
+// userRouter to handle  the user registratyion and login
 // transction router to hanlde all the transcation realted crud operatopn
 
 // uncaught roruter request
 app.use("*", (req, res, next) => {
-  const error = {
-    errorCode: 404,
+  const handling = {
+    code: 404,
     message: "Requested resources not found",
   };
-  next(error);
+  next(handling);
 });
 
 // global error handler
-app.use((error, req, res, next) => {
+app.use((handling, req, res, next) => {
   try {
-    const errorCode = error.errorCode || 500;
+    const errorCode = handling.code || 500;
     res.status(errorCode).json({
       status: "error",
-      message: error.message,
+      message: handling.message,
     });
   } catch (error) {
     res.status(500).json({
       status: "error",
-      message: error.message,
+      message: handling.message,
     });
   }
 });
@@ -55,5 +55,5 @@ app.use((error, req, res, next) => {
 app.listen(PORT, (error) => {
   error
     ? console.log(error)
-    : console.log(`The server in running in http://locahost:${PORT}`);
+    : console.log(`The server in running in http://localhost:${PORT}`);
 });
